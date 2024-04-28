@@ -19,7 +19,5 @@ return {
   { import = "astrocommunity.editing-support.vim-visual-multi" },
 
   { import = "astrocommunity.indent.indent-rainbowline" },
-
-  { import = "astrocommunity.motion.hop-nvim" },
   -- import/override with your plugins folder
 }

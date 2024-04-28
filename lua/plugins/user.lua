@@ -1,8 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
-
 ---@type LazySpec
 return {
 
@@ -82,4 +77,31 @@ return {
       )
     end,
   },
+
+  {
+    'smoka7/hop.nvim',
+    version = "*",
+    event = "BufRead",
+    config = function()
+      require("hop").setup {
+        keys = 'etovxqpdygfblzhckisuran',
+        vim.api.nvim_set_keymap("", "s", "<cmd>HopChar2<cr>", { silent = true }),
+        vim.api.nvim_set_keymap("", "S", "<cmd>HopWord<cr>", { silent = true }),
+        vim.api.nvim_set_keymap("", "l", "<cmd>HopLineStart<cr>", { silent = true }),
+        vim.api.nvim_set_keymap('', 'f',
+          "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+          , {}),
+        vim.api.nvim_set_keymap('', 'F',
+          "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+          , {}),
+        vim.api.nvim_set_keymap('', 't',
+          "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>"
+          , {}),
+        vim.api.nvim_set_keymap('', 'T',
+          "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>"
+          , {}),
+      }
+    end
+  },
+
 }
