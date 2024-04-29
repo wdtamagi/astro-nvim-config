@@ -77,11 +77,20 @@ return {
       )
     end,
   },
+  {
+    "smoka7/hop.nvim",
+    version = "*",
+
+    opts = {
+      keys = "tenosufkhmdcarli",
+    }
+  },
 
   {
     'smoka7/hop.nvim',
     version = "*",
     event = "BufRead",
+
     config = function()
       require("hop").setup {
         keys = 'etovxqpdygfblzhckisuran',
