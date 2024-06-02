@@ -9,6 +9,6 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "dracula",
+    colorscheme = "catppuccin",
   },
 }
